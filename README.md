@@ -42,6 +42,6 @@ This method checks if the provided 'sign' string is equal to the signature used 
 
 #### Classes Integrity:
 ```java
-boolean SecureApp.validClassesIntegrity(Context context,boolean isMutliDex, String... classesCrc)
+boolean SecureApp.validClassesIntegrity(Context context, boolean isMutliDex, String... classesCrc)
 ```
 This method computes the ```CRC``` value of currently running application's ```classes.dex``` file (and other dex files if ```isMultiDex``` is ```true```) and checks if its equal to the input value. if ```isMultiDex``` is enabled, make sure to input all CRC values for all dex files: ```classes.dex```, ```classes2.dex```, etc respectively.
