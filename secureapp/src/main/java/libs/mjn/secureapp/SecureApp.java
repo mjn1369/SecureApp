@@ -78,8 +78,8 @@ public class SecureApp {
         return (context.getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
     }
 
-    public static List<String> detectReverseEngineeringTools(Context context){
-        List<String> result = new ArrayList<>();
+    public static ArrayList<String> detectReverseEngineeringTools(Context context){
+        ArrayList<String> result = new ArrayList<>();
 
         // check for Frida
         ActivityManager am = (ActivityManager) context.getSystemService(Activity.ACTIVITY_SERVICE);
