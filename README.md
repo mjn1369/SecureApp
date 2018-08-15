@@ -32,8 +32,7 @@ dependencies {
 }
 ```
 
-### Usage:
-
+## Usage
 #### Signature Integrity:
 ```java
 boolean SecureApp.validSignatureIntegrity(Context context, String sign)
@@ -51,3 +50,9 @@ This method computes the ```CRC``` value of currently running application's ```c
 boolean SecureApp.validManifestIntegrity(Context context, String manifestCrc)
 ```
 This method computes the ```CRC``` value of currently running application's ```manifest.xml``` file and checks if its equal to the input value.
+
+#### Detect Reverse Engineering Tools:
+```java
+ArrayList<String> SecureApp.detectReverseEngineeringTools(context Context)
+```
+This method checks the device to detect if there's any reverse engineering tool is present. The return value of this method contains the title of detected tools (if the output is empty, there's no such tools installed on the device).
