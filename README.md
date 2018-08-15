@@ -32,7 +32,9 @@ dependencies {
 }
 ```
 
-### Methods:
+### Usage:
+
+#### Signature Integrity:
 ```java
 boolean SecureApp.validSignatureIntegrity(Context context, String sign)
 ```
