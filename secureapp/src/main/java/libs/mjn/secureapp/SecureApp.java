@@ -37,12 +37,12 @@ public class SecureApp {
         return false;
     }
 
-    public static boolean validManifestIntegrity(Context context, String crcManifest) {
+    public static boolean validManifestIntegrity(Context context, String manifestCrc) {
         Long dexCRC_Manifest;
         ZipFile zf;
 
         try {
-            dexCRC_Manifest = java.lang.Long.parseLong(crcManifest, 16);
+            dexCRC_Manifest = java.lang.Long.parseLong(manifestCrc, 16);
             zf = new ZipFile(context.getPackageCodePath());
             ZipEntry ze = zf.getEntry("AndroidManifest.xml");
             if (ze.getCrc() != dexCRC_Manifest) {
@@ -55,13 +55,13 @@ public class SecureApp {
         }
     }
 
-    public static boolean validClassesIntegrity(Context context, boolean isMultiDex, String... crcClasses) {
+    public static boolean validClassesIntegrity(Context context, boolean isMultiDex, String... classesCrc) {
         Long dexCRC_Manifest;
         ZipFile zf;
 
-        for(int i=1;i<=(isMultiDex?crcClasses.length:1);i++){
+        for(int i=1;i<=(isMultiDex?classesCrc.length:1);i++){
             try {
-                dexCRC_Manifest = java.lang.Long.parseLong(crcClasses[i-1], 16);
+                dexCRC_Manifest = java.lang.Long.parseLong(classesCrc[i-1], 16);
                 zf = new ZipFile(context.getPackageCodePath());
                 ZipEntry ze = zf.getEntry("classes"+(i==1?"":i)+".dex");
                 if (ze.getCrc() != dexCRC_Manifest) {
