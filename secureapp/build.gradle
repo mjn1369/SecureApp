@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.mjn1369'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'secureapp'
+
+    publishedGroupId = 'libs.mjn.secureapp'
+    libraryName = 'SecureApp'
+
+    libraryDescription = "SecureApp is an Android module to check for possible manipulations in the original application."
+
+    siteUrl = 'https://github.com/mjn1369/SecureApp'
+    gitUrl = 'https://github.com/mjn1369/SecureApp.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'mjn1369'
+    developerName = 'Mahmoud Jafarinejad'
+    developerEmail = 'mjn1369@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
