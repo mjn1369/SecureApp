@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TestSecureApp</string>
+
+    <string name="signature">0+PbABPpSqhYeV6I8wVlk1aCTrc=</string>
+    <string name="crc_classes">c0d7f2ad</string>
+    <string name="crc_manifest">296b4192</string>
 </resources>

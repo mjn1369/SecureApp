@@ -20,24 +20,28 @@
         android:id="@+id/btn_signature"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:text="check signature"/>
 
     <Button
         android:id="@+id/btn_manifest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:text="check manifest"/>
 
     <Button
         android:id="@+id/btn_classes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:text="check classes"/>
 
     <Button
         android:id="@+id/btn_debuggable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:text="check debuggable"/>
 
     <Button

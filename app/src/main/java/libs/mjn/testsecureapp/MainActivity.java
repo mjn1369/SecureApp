@@ -1,11 +1,10 @@
 package libs.mjn.testsecureapp;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_signature).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(SecureApp.validSignatureIntegrity(MainActivity.this,"signature")){
+                if(SecureApp.validSignatureIntegrity(MainActivity.this,getString(R.string.signature))){
                     tv_result.setText("Valid Signature Integrity");
                     tv_result.setTextColor(Color.GREEN);
                 }
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_classes).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(SecureApp.validClassesIntegrity(MainActivity.this,false,"classes")){
+                if(SecureApp.validClassesIntegrity(MainActivity.this,false,getString(R.string.crc_classes))){
                     tv_result.setText("Valid Classes Integrity");
                     tv_result.setTextColor(Color.GREEN);
                 }
@@ -49,26 +48,12 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_manifest).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(SecureApp.validManifestIntegrity(MainActivity.this,"manifest")){
+                if(SecureApp.validManifestIntegrity(MainActivity.this,getString(R.string.crc_manifest))){
                     tv_result.setText("Valid Manifest Integrity");
                     tv_result.setTextColor(Color.GREEN);
                 }
                 else {
                     tv_result.setText("Invalid Manifest Integrity");
-                    tv_result.setTextColor(Color.RED);
-                }
-            }
-        });
-
-        findViewById(R.id.btn_classes).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(SecureApp.validClassesIntegrity(MainActivity.this,false,"classes")){
-                    tv_result.setText("Valid Classes Integrity");
-                    tv_result.setTextColor(Color.GREEN);
-                }
-                else {
-                    tv_result.setText("Invalid Classes Integrity");
                     tv_result.setTextColor(Color.RED);
                 }
             }
