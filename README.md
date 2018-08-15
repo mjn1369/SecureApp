@@ -53,6 +53,12 @@ This method computes the ```CRC``` value of currently running application's ```m
 
 #### Detect Reverse Engineering Tools:
 ```java
-ArrayList<String> SecureApp.detectReverseEngineeringTools(context Context)
+ArrayList<String> SecureApp.detectReverseEngineeringTools(Context context)
 ```
 This method checks the device to detect if there's any reverse engineering tool present. The return value of this method contains the title of detected tools (if the output is empty, there are no tools installed on the device).
+
+#### Prevent Running App in DEBUG Mode:
+```java
+boolean SecureApp.isDebuggable(Context context)
+```
+Sometimes it's required to run the application only if it's in RELEASE mode. This method checks if the currently running application is in DEBUG mode or not. 
