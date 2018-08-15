@@ -10,7 +10,7 @@ ext {
     publishedGroupId = 'libs.mjn.secureapp'
     libraryName = 'SecureApp'
 
-    libraryDescription = "SecureApp is an Android module to check for possible manipulations in the original application."
+    libraryDescription = "SecureApp is an Android module to check for possible manipulations in the application."
 
     siteUrl = 'https://github.com/mjn1369/SecureApp'
     gitUrl = 'https://github.com/mjn1369/SecureApp.git'

@@ -20,7 +20,7 @@ import java.util.zip.ZipFile;
  */
 public class SecureApp {
 
-    public static boolean checkSignatureIntegrity(Context context, String appSignature) {
+    public static boolean validSignatureIntegrity(Context context, String appSignature) {
         try {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(),PackageManager.GET_SIGNATURES);
             for (Signature signature : packageInfo.signatures) {
@@ -37,7 +37,7 @@ public class SecureApp {
         return false;
     }
 
-    public static boolean checkManifestIntegrity(Context context, String crcManifest) {
+    public static boolean validManifestIntegrity(Context context, String crcManifest) {
         Long dexCRC_Manifest;
         ZipFile zf;
 
@@ -55,15 +55,15 @@ public class SecureApp {
         }
     }
 
-    public static boolean checkClassesIntegrity(Context context, boolean isMultiDex, String... crcManifest) {
+    public static boolean validClassesIntegrity(Context context, boolean isMultiDex, String... crcClasses) {
         Long dexCRC_Manifest;
         ZipFile zf;
 
-        for(int i=0;i<(isMultiDex?crcManifest.length:1);i++){
+        for(int i=1;i<=(isMultiDex?crcClasses.length:1);i++){
             try {
-                dexCRC_Manifest = java.lang.Long.parseLong(crcManifest[i], 16);
+                dexCRC_Manifest = java.lang.Long.parseLong(crcClasses[i-1], 16);
                 zf = new ZipFile(context.getPackageCodePath());
-                ZipEntry ze = zf.getEntry("classes"+(i==0?"":i)+".dex");
+                ZipEntry ze = zf.getEntry("classes"+(i==1?"":i)+".dex");
                 if (ze.getCrc() != dexCRC_Manifest) {
                     return false;
                 }
@@ -74,11 +74,11 @@ public class SecureApp {
         return true;
     }
 
-    public static boolean checkDebuggable(Context context){
+    public static boolean isDebuggable(Context context){
         return (context.getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
     }
 
-    public static List<String> checkReverseEngineeringTools(Context context){
+    public static List<String> detectReverseEngineeringTools(Context context){
         List<String> result = new ArrayList<>();
 
         // check for Frida
