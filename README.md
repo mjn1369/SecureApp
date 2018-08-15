@@ -36,7 +36,7 @@ dependencies {
 #### Signature Integrity:
 ```java
 boolean SecureApp.validSignatureIntegrity(Context context, String sign)
-```
+```java
 This method checks if the provided 'sign' string is equal to the signature used to sign the currently running application.
 
 #### Classes Integrity:
