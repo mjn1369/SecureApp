@@ -55,4 +55,4 @@ This method computes the ```CRC``` value of currently running application's ```m
 ```java
 ArrayList<String> SecureApp.detectReverseEngineeringTools(context Context)
 ```
-This method checks the device to detect if there's any reverse engineering tool is present. The return value of this method contains the title of detected tools (if the output is empty, there's no such tools installed on the device).
+This method checks the device to detect if there's any reverse engineering tool present. The return value of this method contains the title of detected tools (if the output is empty, there are no tools installed on the device).
