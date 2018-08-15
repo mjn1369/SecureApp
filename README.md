@@ -61,4 +61,4 @@ This method checks the device to detect if there's any reverse engineering tool 
 ```java
 boolean SecureApp.isDebuggable(Context context)
 ```
-Sometimes it's required to prevent the application from being executed if it's in DEBUG mode. This method checks if the currently running application is in DEBUG mode or not.
+Sometimes it's required to prevent the application from being executed if it's in DEBUG mode. This method checks whether the currently running application is in DEBUG mode or not.
