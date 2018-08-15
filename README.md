@@ -28,7 +28,7 @@ Add this to your app build.gradle:
 
 ```
 dependencies {
-   compile 'com.github.mjn1369:fieldsetview:1.0.0'
+   compile 'com.github.mjn1369:secureapp:1.0'
 }
 ```
 
